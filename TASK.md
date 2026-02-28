@@ -1,7 +1,7 @@
 # Task: Create project scaffolding and base files
 
 Priority: 1
-Status: spec-in-progress
+Status: design-in-progress
 Created: 2026-02-28T01:00:00Z
 Scope: src/, tests/, config/, assets/, scripts/, docs/, voices/, models/, working/, archive/, pyproject.toml, requirements.txt, .gitignore, .env.example, README.md
 
