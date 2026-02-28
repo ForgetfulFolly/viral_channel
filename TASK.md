@@ -1,7 +1,7 @@
 # Task: Implement SQLite database with SQLAlchemy models
 
 Priority: 1
-State: queued
+Status: spec-in-progress
 Created: 2026-02-28T01:02:00Z
 Depends-On: agent/task-20260228010000-create-project-scaffolding
 Scope: src/database.py, scripts/init_database.py, tests/test_database.py
