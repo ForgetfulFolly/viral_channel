@@ -1,0 +1,1 @@
+"""Placeholder: Narration script generator."""
