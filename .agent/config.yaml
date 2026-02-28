@@ -1,0 +1,17 @@
+workspace:
+  name: viral_channel
+  description: "Automated YouTube pipeline -- Last SiX Hours"
+
+blocked_paths:
+  - ".git/"
+  - "*.env"
+  - ".env*"
+  - "config/youtube_*_creds.json"
+  - "voices/*.wav"
+  - "models/"
+  - "_agent_ref/"
+  - "assets/music/"
+  - "assets/fonts/"
+
+context:
+  architecture: ".agent/context.md"
