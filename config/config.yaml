@@ -1,0 +1,183 @@
+general:
+  project_name: "Last SiX Hours"
+  log_level: "INFO"
+  log_dir: "logs"
+  working_dir: "working"
+  archive_dir: "archive"
+  timezone: "UTC"
+
+llm:
+  primary:
+    name: "deepseek-local"
+    base_url: "${LLM_BASE_URL}"
+    api_key: "${LLM_API_KEY}"
+    model: "deepseek-r1:32b"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout_seconds: 120
+    max_retries: 3
+  fallback:
+    name: "openai-fallback"
+    base_url: "https://api.openai.com/v1"
+    api_key: "${OPENAI_API_KEY}"
+    model: "gpt-4o-mini"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout_seconds: 60
+    max_retries: 2
+
+tts:
+  primary_engine: "piper"
+  fallback_engine: "coqui"
+  engines:
+    - name: "piper"
+      model_path: "models/piper/default.pt"
+      device: "cuda:0"
+      sample_rate: 22050
+    - name: "coqui"
+      model_path: "models/coqui/default.pt"
+      device: "cuda:0"
+      sample_rate: 22050
+  default_voice: "en_us_male"
+  voices:
+    - name: "en_us_male"
+      engine: "piper"
+      reference_audio: ""
+      language: "en"
+      speed: 1.0
+    - name: "en_us_female"
+      engine: "coqui"
+      reference_audio: ""
+      language: "en"
+      speed: 1.0
+
+audio:
+  narration_lufs: -16.0
+  clip_audio_lufs: -26.0
+  background_music_lufs: -32.0
+  ducking_db: -12.0
+  sentence_pause_ms: 300
+  segment_pause_ms: 500
+  music_fade_sec: 3.0
+  output_sample_rate: 48000
+  output_channels: 2
+
+video:
+  target_duration_min: 480
+  target_duration_max: 600
+  target_clips: 10
+  clip_duration_min: 20
+  clip_duration_max: 90
+  resolution: "1920x1080"
+  fps: 30
+  codec: "libx264"
+  crf: 20
+  preset: "medium"
+  audio_codec: "aac"
+  audio_bitrate: "192k"
+  pixel_format: "yuv420p"
+  transition_duration: 0.5
+  fade_duration: 0.5
+  max_source_duration_seconds: 3600
+  clip_extraction_methods_priority:
+    - "most_replayed"
+    - "transcript"
+    - "audio_energy"
+    - "scene_detection"
+  shorts_count_per_video: 2
+  shorts_duration_min: 30
+  shorts_duration_max: 60
+
+discovery:
+  lookback_hours: 6
+  max_candidates_per_niche: 30
+  min_views: 10000
+  min_viral_score: 0.4
+  youtube_daily_quota_limit: 10000
+  reddit_subreddits:
+    gaming:
+      - "gaming"
+      - "pcgaming"
+    sports:
+      - "sports"
+      - "soccer"
+  reddit_min_score: 100
+  scoring_weight_view_velocity: 0.30
+  scoring_weight_reddit: 0.20
+  scoring_weight_like_ratio: 0.15
+  scoring_weight_comment_velocity: 0.15
+  scoring_weight_recency: 0.20
+
+channels:
+  - name: "Gaming Channel"
+    niche: "gaming"
+    enabled: true
+    youtube_category_id: 20
+    youtube_credentials_file: "credentials/gaming.json"
+    schedule_times_utc:
+      - "12:00"
+      - "18:00"
+    voice: "en_us_male"
+    hashtags:
+      - "gaming"
+      - "videogames"
+      - "letsplay"
+    standard_tags:
+      - "gaming"
+      - "streaming"
+    youtube_search_queries:
+      - "latest gaming news"
+      - "top gaming clips"
+  - name: "Sports Channel"
+    niche: "sports"
+    enabled: true
+    youtube_category_id: 17
+    youtube_credentials_file: "credentials/sports.json"
+    schedule_times_utc:
+      - "10:00"
+      - "20:00"
+    voice: "en_us_female"
+    hashtags:
+      - "sports"
+      - "highlights"
+      - "football"
+    standard_tags:
+      - "sports"
+      - "fitness"
+    youtube_search_queries:
+      - "sports highlights"
+      - "football news"
+
+telegram:
+  bot_token: "${TELEGRAM_BOT_TOKEN}"
+  authorized_user_ids:
+    - 123456789
+    - 987654321
+  review_timeout_hours: 2
+  reminder_after_hours: 1.0
+  quiet_hours_start: 23
+  quiet_hours_end: 7
+
+youtube_upload:
+  chunk_size_bytes: 10485760
+  max_retries: 3
+  default_privacy: "private"
+  default_language: "en"
+
+scheduler:
+  max_concurrent_pipelines: 2
+  max_concurrent_downloads: 4
+  max_concurrent_renders: 1
+  job_store_path: "data/scheduler_jobs.sqlite"
+
+branding:
+  channel_display_name: "LAST SIX HOURS"
+  font_path: "assets/fonts/default.ttf"
+  title_font_size: 72
+  label_font_size: 120
+  lower_third_font_size: 36
+  primary_color: "#FFFFFF"
+  secondary_color: "#FFD700"
+  background_color: "#000000"
+  watermark_path: ""
+  watermark_opacity: 0.3
