@@ -1,7 +1,7 @@
 # Task: Build Reddit API client for viral content discovery
 
 Priority: 3
-Status: queued
+Status: pending
 Created: 2026-02-28T02:06:00Z
 Depends-On: agent/task-20260228020100-fix-conftest-imports
 Scope: src/discovery/reddit_source.py, tests/test_reddit.py
