@@ -4,14 +4,13 @@ workspace:
 
 blocked_paths:
   - ".git/"
+  - ".env"
   - "*.env"
-  - ".env*"
   - "config/youtube_*_creds.json"
   - "voices/*.wav"
-  - "models/"
+  - "models/*.bin"
+  - "models/*.pth"
   - "_agent_ref/"
-  - "assets/music/"
-  - "assets/fonts/"
 
 context:
   architecture: ".agent/context.md"
