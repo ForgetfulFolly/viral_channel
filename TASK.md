@@ -1,7 +1,7 @@
 # Task: Fix tests/conftest.py imports to match actual module exports
 
 Priority: 1
-Status: design-in-progress
+Status: pending
 Created: 2026-02-28T02:01:00Z
 Scope: tests/conftest.py
 
