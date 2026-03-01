@@ -1,7 +1,7 @@
 # Task: Create FFmpeg utility wrapper for video and audio operations
 
 Priority: 2
-Status: design-in-progress
+Status: implement-in-progress
 Created: 2026-02-28T02:04:00Z
 Depends-On: agent/task-20260228020100-fix-conftest-imports
 Scope: src/utils/ffmpeg.py, tests/test_ffmpeg.py
