@@ -4,7 +4,7 @@ Priority: 3
 Status: implement-in-progress
 Created: 2026-02-28T02:06:00Z
 Depends-On: agent/task-20260228020100-fix-conftest-imports
-Scope: src/discovery/reddit_source.py, tests/test_reddit.py
+Scope: src/discovery/reddit_source.py, src/discovery/dataclasses.py, tests/test_reddit.py
 
 ## Description
 Create a Reddit viral content discovery module using PRAW.
