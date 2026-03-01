@@ -1,7 +1,7 @@
 # Task: Implement viral score calculation module
 
 Priority: 3
-Status: design-in-progress
+Status: implement-in-progress
 Created: 2026-02-28T02:07:00Z
 Depends-On: agent/task-20260228020100-fix-conftest-imports
 Scope: src/discovery/scorer.py, tests/test_scorer.py
