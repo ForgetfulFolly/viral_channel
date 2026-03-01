@@ -1,7 +1,7 @@
 # Task: Build YouTube Data API v3 client wrapper
 
 Priority: 2
-Status: spec-in-progress
+Status: design-in-progress
 Created: 2026-02-28T02:05:00Z
 Depends-On: agent/task-20260228020100-fix-conftest-imports
 Scope: src/discovery/youtube_source.py, src/upload/youtube_uploader.py, scripts/setup_youtube_oauth.py, tests/test_youtube.py
