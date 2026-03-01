@@ -1,7 +1,7 @@
 # Task: Complete the 7 missing SQLAlchemy database models
 
 Priority: 1
-Status: spec-in-progress
+Status: design-in-progress
 Created: 2026-02-28T02:02:00Z
 Scope: src/database.py, tests/test_database.py
 
