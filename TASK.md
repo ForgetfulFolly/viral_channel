@@ -1,7 +1,7 @@
 # Task: Build the LLM abstraction layer with provider support
 
 Priority: 2
-Status: spec-in-progress
+Status: design-in-progress
 Created: 2026-02-28T02:03:00Z
 Depends-On: agent/task-20260228020100-fix-conftest-imports
 Scope: src/llm/__init__.py, src/llm/client.py, src/llm/prompts.py, config/prompts/, tests/test_llm_client.py
